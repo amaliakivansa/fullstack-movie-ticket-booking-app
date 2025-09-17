@@ -13,8 +13,14 @@
   "description": "",
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^8.0.0",
-    "lint-staged": "^16.1.6"
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2"
   },
   "husky": {
     "hooks": {
@@ -22,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "client/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ]
