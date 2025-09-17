@@ -14,12 +14,12 @@
     "husky": "^8.0.0",
     "lint-staged": "^16.1.6"
   },
-"husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+  "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"]
     }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"]
-  }
 }
