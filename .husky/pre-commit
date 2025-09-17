@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# ⛔ Fail if the wrong Node.js version is used
+NODE_VERSION=$(node -v)
+REQUIRED_VERSION="v20.15.0"
+
+if [ "$NODE_VERSION" != "$REQUIRED_VERSION" ]; then 
+   echo '❌ Failed to commit'
+   echo "Your node version is $NODE_VERSION"
+   echo "Please use node $REQUIRED_VERSION"
+   exit 1
+fi
+
+# ✅ Run lint-staged
+echo "▶️ Running lint-staged..."
+npx lint-staged
+
+# ✅ Success message
+echo "✅ Pre-commit checks passed"
