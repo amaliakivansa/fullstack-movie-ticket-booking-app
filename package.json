@@ -2,9 +2,16 @@
   "name": "quickshow",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
+    "lint": "eslint \"client/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint \"client/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write \"client/**/*.{js,jsx,ts,tsx,css,scss,md,html}\"",
     "commit": "cz"
   },
   "keywords": [],
@@ -30,6 +37,9 @@
   "lint-staged": {
     "client/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "client/**/*.{css,scss,md,html}": [
       "prettier --write"
     ]
   },
