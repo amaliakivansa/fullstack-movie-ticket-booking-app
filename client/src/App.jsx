@@ -1,6 +1,8 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import Movies from './pages/Movies';
 import MovieDetails from './pages/MovieDetails';
@@ -21,6 +23,7 @@ const App = () => {
         <Route path='/my-bookings' element={<MyBookings />} />
         <Route path='/favorite' element={<Favorite />} />
       </Routes>
+      {!isAdminRoute && <Footer />}
     </>
   );
 };
